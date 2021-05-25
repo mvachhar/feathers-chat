@@ -2,9 +2,10 @@ const Sequelize = require('sequelize');
 
 module.exports.sequelize = function sequelize(app) {
   const connectionString = app.get('mssql');
+  if (!connectionString) throw new Error('Database connection string is not set in config \'mssql\'');
   const sequelize = new Sequelize(connectionString, {
     dialect: 'mssql',
-    logging: true,
+    //logging: console.log,
     define: {
       freezeTableName: true
     }
