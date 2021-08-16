@@ -54,4 +54,6 @@ module.exports = {
     }
   },
   mssql: mssql(),
+  sessionSecret: 'replace with unique session secret',
+  tlsEnabled: false,
 };

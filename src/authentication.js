@@ -19,6 +19,9 @@ class GitHubStrategy extends OAuthStrategy {
 }
 
 module.exports = app => {
+  const expressSession = app.get('expressSession');
+  if (!expressSession) throw new Error('Internal error: expressSession not set');
+
   const authentication = new AuthenticationService(app);
 
   authentication.register('jwt', new JWTStrategy());
@@ -26,5 +29,5 @@ module.exports = app => {
   authentication.register('github', new GitHubStrategy());
 
   app.use('/authentication', authentication);
-  app.configure(expressOauth());
+  app.configure(expressOauth({ expressSession }));
 };

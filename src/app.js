@@ -14,6 +14,7 @@ const socketio = require('@feathersjs/socketio');
 
 const middleware = require('./middleware');
 const services = require('./services');
+const session = require('./session');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
@@ -37,10 +38,15 @@ module.exports.createApp = function createApp() {
   // Host the public folder
   app.use('/', express.static(app.get('public')));
 
+  const tlsEnabled = app.get('tlsEnabled');
+  if (typeof tlsEnabled !== 'boolean') throw new Error('Internal error: tlsEnabled not set');
+  if (tlsEnabled) app.set('trust proxy', 1); // trust first proxy
+
   // Set up Plugins and providers
   app.configure(express.rest());
   app.configure(socketio());
   app.configure(sequelize);
+  app.configure(session);
 
   // Configure other middleware (see `middleware/index.js`)
   app.configure(middleware);
