@@ -26,11 +26,14 @@ module.exports = {
   },
   authentication: {
     oauth: {
-      redirect: '/',
+      redirect: 'EXTERNAL_URL',
       github: {
-        key: '<Client ID>',
-        secret: '<Client secret>'
-      }
+        key: 'GITHUB_CLIENT_ID',
+        secret: 'GITHUB_CLIENT_SECRET',
+        scope: [
+          'user:email'
+        ],
+      },
     },
     entity: 'user',
     service: 'users',

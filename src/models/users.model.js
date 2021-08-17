@@ -27,7 +27,6 @@ module.exports = function (app) {
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
     },
   }, {
     hooks: {
