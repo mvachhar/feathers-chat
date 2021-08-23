@@ -6,6 +6,7 @@ module.exports.sequelize = function sequelize(app) {
   const sequelize = new Sequelize(connectionString, {
     dialect: 'mssql',
     //logging: console.log,
+    logging: false,
     define: {
       freezeTableName: true
     }
