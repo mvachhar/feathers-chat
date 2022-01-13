@@ -1,41 +1,22 @@
-// See http://docs.sequelizejs.com/en/latest/docs/models-definition/
+// users-model.js - A mongoose model
+//
+// See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-const Sequelize = require('sequelize');
-const DataTypes = Sequelize.DataTypes;
-
 module.exports = function (app) {
-  const sequelizeClient = app.get('sequelizeClient');
-  const messages = sequelizeClient.define('messages', {
-    _id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-    text: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+  const modelName = 'messages';
+  const mongooseClient = app.get('mongooseClient');
+  const schema = new mongooseClient.Schema({
+  
+    text: { type: String, required: true },
+    userId: { type: mongooseClient.Schema.Types.ObjectId, ref: 'users', required: true },
   }, {
-    hooks: {
-      beforeCount(options) {
-        options.raw = true;
-      }
-    }
+    timestamps: true
   });
 
-  // eslint-disable-next-line no-unused-vars
-  messages.associate = function (models) {
-    const foreignKey = {
-      name: 'userId',
-      allowNull: false,
-    };
-    messages.belongsTo(models.users, {
-      foreignKey,
-    });
-    models.users.hasMany(messages, {
-      foreignKey,
-    });
-  };
-
-  return messages;
+  // This is necessary to avoid model compilation errors in watch mode
+  // see https://mongoosejs.com/docs/api/connection.html#connection_Connection-deleteModel
+  if (mongooseClient.modelNames().includes(modelName)) {
+    mongooseClient.deleteModel(modelName);
+  }
+  return mongooseClient.model(modelName, schema);
 };

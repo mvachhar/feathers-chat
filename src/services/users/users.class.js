@@ -1,5 +1,5 @@
 // This is the database adapter service class
-const { Service } = require('feathers-sequelize');
+const { Service } = require('feathers-mongoose');
 
 // We need this to create the MD5 hash
 const crypto = require('crypto');

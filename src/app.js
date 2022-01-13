@@ -19,7 +19,7 @@ const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
 const authentication = require('./authentication');
-const { connectAndSync, sequelize } = require('./sequelize');
+const { connectAndSync, mongoose } = require('./mongoose');
 
 module.exports.createApp = function createApp() {
   const app = express(feathers());
@@ -45,7 +45,7 @@ module.exports.createApp = function createApp() {
   // Set up Plugins and providers
   app.configure(express.rest());
   app.configure(socketio());
-  app.configure(sequelize);
+  app.configure(mongoose);
   app.configure(session);
 
   // Configure other middleware (see `middleware/index.js`)

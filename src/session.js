@@ -1,13 +1,10 @@
 const session = require('express-session');
-const sessionSequelize = require('connect-session-sequelize');
-
-// initalize sequelize with session store
-const SequelizeStore = sessionSequelize(session.Store);
+const MongoStore = require('connect-mongo');
 
 
 module.exports = function sessionInit(app) {
-  const sequelize = app.get('sequelizeClient');
-  if (!sequelize) throw new Error('Internal error: sequelizeClient not set when initializing session');
+  const connectionString = app.get('databaseUrl');
+  if (!connectionString) throw new Error('Database connection string is not set in config \'databaseUrl\'');
   const tlsEnabled = app.get('tlsEnabled');
 
   const sess = session({
@@ -24,7 +21,9 @@ module.exports = function sessionInit(app) {
 
     saveUninitialized: true,
     secret: app.get('sessionSecret'),
-    store: new SequelizeStore({ db: sequelize }),
+    store: MongoStore.create({
+      mongoUrl: connectionString,
+    }),
   });
 
   app.set('expressSession', sess);
