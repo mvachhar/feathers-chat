@@ -129,7 +129,8 @@ const loginHTML = `<main class="login container">
 </main>`;
 
 // Chat base HTML (without user list and messages)
-const chatHTML = `<main class="flex flex-column">
+const chatHTML = `
+<main class="flex flex-column">
   <header class="title-bar flex flex-row flex-center">
     <div class="title-wrapper block center-element">
       <img class="logo" src="http://feathersjs.com/img/feathers-logo-wide.png"
@@ -235,6 +236,40 @@ const showChat = async () => {
     }
   });
   
+  /* REMOVE MESSAGE BEGIN */
+  const chat = document.querySelector('.chat');
+  if(chat && messages.data.length < 25) {
+    chat.innerHTML += `<div class="message flex flex-row">
+      <img src="https://adaptable.io/img/color logo.svg" alt="Adaptable.io logo" class="avatar">
+      <div class="message-wrapper">
+        <p class="message-header">
+          <span class="username font-600">${escape("Adaptable.io")}</span>
+          <span class="sent-date font-300">${moment(new Date("1/1/2022")).format('MMM Do, hh:mm:ss')}</span>
+        </p>
+        <p class="message-content font-300">
+          <img src="https://adaptable.io/img/party-popper.svg" width="20em">
+          Congratulations on logging in to your chat starter app.
+          <img src="https://adaptable.io/img/party-popper.svg" width="20em">
+          <br />
+          Wondering what's next? Go to the <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next">starter guide</a> to find how to:
+          <ul>
+            <li>
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-2-remove-the-congratulations-message">Remove this message and the one from the login page</a>,
+            </li>
+            <li>
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-3-enable-github-authentication">Enable GitHub Authentication for the chat app</a>,
+            </li>
+            <li>
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-4-add-more-feathers-api-services">Add new API services to the Feathers.js backend for this app</a>.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    `
+  }
+  /* REMOVE MESSAGE END */
+
   // We want to show the newest message last
   messages.data.reverse().forEach(addMessage);
 
