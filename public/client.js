@@ -16,80 +16,35 @@ const loginHTML = `<main class="login container">
   <div style="background-color: rgb(4 0 255 / 6%); padding: 15px; border-radius: 10px; margin-top: 10px;">
     <div class="row">
       <div class="col-6 push-3 col-3-tablet no-push-tablet text-center">
-        <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+        <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 100px;" />
       </div>
       <div class="col-12 col-6-tablet text-center">
-        <h2 class="font-900 h1">Congratulations!</h2>
         <p style="font-size: 1.5rem">
           Your app is now running on
         </p>
         <img src="https://adaptable.io/img/color lockup.svg" style="max-width: 200px;" />
       </div>
       <div class="none inline-tablet col-3-tablet text-center">
-        <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+        <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 100px;" />
       </div>
     </div>
 
-    <h2 class="font-900 h1 text-center">What's Next?</h2>
+    <h2 class="font-900 h1 text-center">Check out Your New App!</h2>
 
-    <p class="text-center">
-      Here are a few ideas on what to do with your new app.
-    </p>
-
-    <div class="row flex flex-row flex-wrap">
-
-      <div class="col-12 col-6-tablet col-3-desktop">
-        <h4 class="font-900" style="margin-bottom: .8em">
-          1. Check out your new app
-        </h4>
-        <p>
-          Enter an email and password below to sign up with your real-time chat app.
-        </p>
-        <p>
-          Tip: Use an incognito browser window to sign up a second user and chat with yourself.
-        </p>
-      </div>
-
-      <div class="col-12 col-6-tablet col-3-desktop">
-        <h4 class="font-900" style="margin-bottom: .8em">
-          2. Remove this message
-        </h4>
-        <p>
-          Clone your new repo and edit the app source code to remove this message.
-          Push your changes to GitHub and Adaptable will automatically re-deploy to the cloud.
-        </p>
-      </div>
-
-      <div class="col-12 col-6-tablet col-3-desktop">
-        <h4 class="font-900" style="margin-bottom: .8em">
-          3. Enable GitHub auth
-        </h4>
-        <p>
-          Add values for the environment variables <strong>GITHUB_CLIENT_ID</strong>
-          and <strong>GITHUB_CLIENT_SECRET</strong> to your Adaptable app and
-          re-deploy to enable your app's users to log in with a GitHub account.
-        </p>
-      </div>
-
-      <div class="col-12 col-6-tablet col-3-desktop">
-        <h4 class="font-900" style="margin-bottom: .8em">
-          4. Add more Feathers API services
-        </h4>
-        <p>
-          Add more MongoDB-backed API endpoints to your app using the 
-          <a target="_blank" href="https://docs.feathersjs.com/guides/basics/services.html#generating-a-service">Feathers Generator CLI</a>.
-        </p>
-      </div>
-
+    <div class="row">
+      <p class="text-center" style="max-width: 600px; margin: auto">
+        Enter a username and password below and click &quot;Sign up and log in&quot; to use the app.  
+        You can also create a separate account in an private tab to chat with your self.
+      </p>
     </div>
 
     <div class="row">
-      <p class="text-center">
+      <p class="text-center" style="margin: auto; max-width: 600px">
         See the <a href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" target="_blank">Feathers Chat Starter Guide</a> for step-by-step
-        instructions for each.
+        instructions on how to deploy a code update, set up environment variables, and more!
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" style="background: #363795; padding: 13px 30px; border-radius: 30px; color: #fff; font-size:18px;">Go to the Starter Guide</a>
+        <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" style="display: inline-block; background: #363795; padding: 13px 30px; border-radius: 30px; color: #fff; font-size:18px;">Go to the Starter Guide</a>
       </p>
     </div>
   </div>
