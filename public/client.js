@@ -212,7 +212,7 @@ const showChat = async () => {
               <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-2-deploy-a-code-update">Deploy a code update</a> by removing this message and the one from the login page.
             </li>
             <li>
-              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-3-configure-environment-variables">Learn how to conifgure environment variables</a> by enabling GitHub Authentication for this app.
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-3-configure-environment-variables">Learn how to configure environment variables</a> by enabling GitHub Authentication for this app.
             </li>
             <li>
               <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-4-start-building-your-app-by-adding-feathers-api-services">Make this app your own</a> by adding new API services.
