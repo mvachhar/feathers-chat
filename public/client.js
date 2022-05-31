@@ -209,13 +209,13 @@ const showChat = async () => {
           Wondering what's next? Go to the <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next">starter guide</a> to find how to:
           <ul>
             <li>
-              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-2-deploy-a-code-update">Remove this message and the one from the login page</a>.
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-2-deploy-a-code-update">Deploy a code update</a> by removing this message and the one from the login page.
             </li>
             <li>
-              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-3-configure-environment-variables">Enable GitHub Authentication for the chat app</a>.
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-3-configure-environment-variables">Learn how to conifgure environment variables</a> by enabling GitHub Authentication for this app.
             </li>
             <li>
-              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-4-start-building-your-app-by-adding-feathers-api-services">Add new API services to the Feathers.js backend for this app</a>.
+              <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#idea-4-start-building-your-app-by-adding-feathers-api-services">Make this app your own</a> by adding new API services.
             </li>
           </ul>
         </p>
