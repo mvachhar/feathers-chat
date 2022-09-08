@@ -8,8 +8,11 @@ process.on('unhandledRejection', (reason, p) =>
 
 async function main() {
   const app = createApp();
-  await startApp(app);
-  logger.info(`Feathers application started on http://${app.get('host')}:${app.get('port')}`);
+  // Exit early
+  console.log('Exiting early with code 1');
+  process.exit(1);
+  // await startApp(app);
+  // logger.info(`Feathers application started on http://${app.get('host')}:${app.get('port')}`);
 }
 
 main().catch((err) => {
