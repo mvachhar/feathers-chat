@@ -34,7 +34,7 @@ const loginHTML = `<main class="login container">
     <div class="row">
       <p class="text-center" style="max-width: 600px; margin: auto">
         Enter a username and password below and click &quot;Sign up and log in&quot; to use the app.  
-        You can also create a separate account in an private tab to chat with your self.
+        You can also create a separate account in an private tab to chat with yourself.
       </p>
     </div>
 
