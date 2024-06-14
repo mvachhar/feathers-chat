@@ -9,7 +9,7 @@ process.on('unhandledRejection', (reason, p) =>
 async function main() {
   const app = createApp();
   await startApp(app);
-  logger.info(`Feathers application started on http://${app.get('host')}:${app.get('port')}`);
+  logger.info(`Feathers application started on http://${app.get('host')}:${app.get('port')} Node ${process.version}`);
 }
 
 main().catch((err) => {
